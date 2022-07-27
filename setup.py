@@ -1,15 +1,9 @@
-from setuptools import setup
+from setuptools import setup,find_packages
 from typing import List
-
-
-
-    
-
-
 #Declaring variables for setup functions
 
 PROJECT_NAME="flight_fare_prediction"
-VERSION="0.0.3"
+VERSION="0.0.1"
 AUTHOR="Mritunjay"
 DESCRIPTION="This is my first Machine Learning Project"
 PACKAGES=["housing"]
@@ -38,7 +32,7 @@ name=PROJECT_NAME,
 version=VERSION,
 author=AUTHOR,
 description=DESCRIPTION,
-packages=PACKAGES,
+packages=PACKAGES,# IT RETURNS in root folderhaving __init__.py files
 install_requires=get_requirements_list()
 
 )
