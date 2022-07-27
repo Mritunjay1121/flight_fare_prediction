@@ -15,8 +15,7 @@ conda activate C:\Users\mritu\PycharmProjects\Projects\flight_fare_prediction\fl
 Installing libraraies written in requirements.txt
 
 pip install -r requirements.txt 
-...
-
+...git 
 
 To ignore a file , write its name inside gitignore so that it should not be on the github
 
