@@ -8,7 +8,7 @@ conda create -p flight_fare_prediction python==3.7 -y
 Activating the environement
 ...
 
-conda activate C:\Users\mritu\PycharmProjects\Projects\flight_fare_prediction\flight_fare_prediction\flight_fare_prediction\flight_fare_prediction
+conda activate C:\Users\mritu\PycharmProjects\Projects\flight_fare_prediction\flight_fare_prediction\flight_fare_prediction\flight_fare_prediction #
 
 Installing libraraies written in requirements.txt
 ...
@@ -30,13 +30,16 @@ S1. git add <filename>
         or
     git add . 
 
-    To add all files
+To add all files
+...
 
 
-    
-git log
-... 
 Used to see the versions
+...
+
+git log
+ 
+
 
 
 s2. To create or save changes/versions 
