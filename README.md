@@ -58,9 +58,9 @@ git remote -v
 
 To setup CI/CD Pipeline in heroku we need 3 informations
 
-1. Heroku Email :   mritunjay.1121@gmail.com
-2. Heroku API Key : f9fead10-4fb3-443f-ba99-d10ecb9fb4b9
-3. Heroku App Name: p1-flight-fare-prediction
+1. Heroku Email :   
+2. Heroku API Key :
+3. Heroku App Name: 
 
 
 Create a Dockerfile inside main directory and write the code there for the configuration of virtual machine
