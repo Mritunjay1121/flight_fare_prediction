@@ -101,3 +101,8 @@ docker stop <container id>
 
 Now , set the changes to github
 
+
+Create housing.
+Create setup.py and configure it for requirements.txt file 
+ Run this setup.py
+ 
