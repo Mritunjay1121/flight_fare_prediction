@@ -15,7 +15,7 @@ def index():
         housing=FlightfareException(e,sys)
         logging.info(housing.error_message)
         logging.info("We are testing logging")
-    return "I have arrived"
+    return "Teri maaa ki chut"
 
 
 if __name__=="__main__":
