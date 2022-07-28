@@ -124,3 +124,9 @@ pip install ipykernel
 ...
 
 We are using jupyter notebook to check the code that is to be written finally into our project
+
+
+Filling the entity folder to define entities
+...
+
+Now making an ".yaml" file to store our database coming from url...
