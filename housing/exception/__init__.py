@@ -28,7 +28,7 @@ class FlightfareException(Exception):
         [ {file_name} ] at 
         line number: [{exception_block_line_number}] 
         error message: [{error_message}]
-    #     """
+        """
         return error_message
     # 
     def __str__(self):
