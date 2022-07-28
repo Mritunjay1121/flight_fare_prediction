@@ -1,5 +1,0 @@
-numpy
-Flask
-gunicorn
-sklearn
-pandas

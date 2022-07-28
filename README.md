@@ -9,7 +9,7 @@ conda create -p flight_fare_prediction python==3.7 -y
 Activating the environement
 
 
-conda activate C:\Users\mritu\PycharmProjects\Projects\flight_fare_prediction\flight_fare_prediction\flight_fare_prediction\flight_fare_prediction #
+conda activate C:\Users\mritu\PycharmProjects\Projects\flight_fare_prediction
 ...
 
 Installing libraraies written in requirements.txt
@@ -104,5 +104,10 @@ Now , set the changes to github
 
 Create housing.
 Create setup.py and configure it for requirements.txt file 
- Run this setup.py
- 
+
+Run this setup.py
+Using python setup.py install
+
+
+
+"e ." is used to install housing folder
