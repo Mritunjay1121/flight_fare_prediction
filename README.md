@@ -111,3 +111,16 @@ Using python setup.py install
 
 
 "e ." is used to install housing folder
+
+
+Make all folders inside housing
+
+And fill logging and exception folders first
+
+
+Install ipykernel to run a jupyter notebook
+...
+pip install ipykernel
+...
+
+We are using jupyter notebook to check the code that is to be written finally into our project
