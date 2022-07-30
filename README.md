@@ -129,4 +129,17 @@ We are using jupyter notebook to check the code that is to be written finally in
 Filling the entity folder to define entities
 ...
 
-Now making an ".yaml" file to store our database coming from url...
+Now making an ".yaml" inside config folder . Config folder inside main directory.".yaml" file to store our database coming from url...
+
+
+Basically this ".yaml" file stores the artifacts coming from different artifacts
+...
+
+
+To use config.yaml file we install PyYAML module
+
+
+To do some small functionalities like reading the yaml file we write code in util.util.py
+
+
+To use write all the constants(hard coded values) used we use housing.constant.__init__.py
