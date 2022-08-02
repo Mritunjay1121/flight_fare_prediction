@@ -11,7 +11,7 @@ from sklearn.model_selection import StratifiedShuffleSplit
 
 class DataIngestion:
 
-    def __init__(self,data_ingestion_config:DataIngestionConfig ):
+    def __init__(self,data_ingestion_config:DataIngestionConfig):
         print(data_ingestion_config,"sfs")
         try:
             logging.info(f"{'>>'*20}Data Ingestion log started.{'<<'*20} ")
