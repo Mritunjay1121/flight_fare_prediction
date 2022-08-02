@@ -1,6 +1,6 @@
 from housing.entity.config_entity import DataIngestionConfig
 import sys,os
-from housing.exception import FlightfareException, HousingException
+from housing.exception import FlightfareException
 from housing.logger import logging
 from housing.entity.artifact_entity import DataIngestionArtifact
 import tarfile
@@ -12,39 +12,40 @@ from sklearn.model_selection import StratifiedShuffleSplit
 class DataIngestion:
 
     def __init__(self,data_ingestion_config:DataIngestionConfig ):
+        print(data_ingestion_config,"sfs")
         try:
             logging.info(f"{'>>'*20}Data Ingestion log started.{'<<'*20} ")
-            self.data_ingestion_config = data_ingestion_config
+            self.data_ingestion_config = data_ingestion_config.dataset_download_url
+            # for i in download_url:
+            
 
         except Exception as e:
             raise FlightfareException(e,sys)
 
 
 
-    def download_housing_data(self,) -> str:
-            try:
-                #extraction remote url to download dataset
-                download_url = self.data_ingestion_config.dataset_download_url
+    def download_housing_data(self) -> str:
+        try:
+            #extraction remote url to download dataset
+            download_url = self.data_ingestion_config
+            
 
-                #folder location to download file
-                tgz_download_dir = self.data_ingestion_config.tgz_download_dir
+            #folder location to download file
+            tgz_download_dir = self.data_ingestion_config.tgz_download_dir
+            
+            os.makedirs(tgz_download_dir,exist_ok=True)
 
-                # if os.path.exists(tgz_download_dir):
-                #     os.remove(tgz_download_dir)
-                
-                os.makedirs(tgz_download_dir,exist_ok=True)
+            housing_file_name = os.path.basename(download_url)
 
-                flightfare_file_name = os.path.basename(download_url)
+            tgz_file_path = os.path.join(tgz_download_dir, housing_file_name)
 
-                tgz_file_path = os.path.join(tgz_download_dir, flightfare_file_name)
+            logging.info(f"Downloading file from :[{download_url}] into :[{tgz_file_path}]")
+            urllib.request.urlretrieve(download_url, tgz_file_path)
+            logging.info(f"File :[{tgz_file_path}] has been downloaded successfully.")
+            return tgz_file_path
 
-                logging.info(f"Downloading file from :[{download_url}] into :[{tgz_file_path}]")
-                urllib.request.urlretrieve(download_url, tgz_file_path)
-                logging.info(f"File :[{tgz_file_path}] has been downloaded successfully.")
-                return tgz_file_path
-
-            except Exception as e:
-                raise FlightfareException(e,sys) from e
+        except Exception as e:
+            raise FlightfareException(e,sys) from e 
 
     def extract_tgz_file(self,tgz_file_path:str):
         try:
