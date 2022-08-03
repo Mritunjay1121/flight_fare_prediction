@@ -12,32 +12,32 @@ from sklearn.model_selection import StratifiedShuffleSplit
 class DataIngestion:
 
     def __init__(self,data_ingestion_config:DataIngestionConfig):
-        print(data_ingestion_config,"sfs")
+        # print(data_ingestion_config,"sfs") 
         try:
             logging.info(f"{'>>'*20}Data Ingestion log started.{'<<'*20} ")
-            self.data_ingestion_config = data_ingestion_config.dataset_download_url
-            # for i in download_url:
-            
-
+            self.data_ingestion_config = data_ingestion_config
+    
         except Exception as e:
             raise FlightfareException(e,sys)
-
+ 
 
 
     def download_housing_data(self) -> str:
         try:
             #extraction remote url to download dataset
-            download_url = self.data_ingestion_config
+            download_url = self.data_ingestion_config.dataset_download_url
             
 
             #folder location to download file
             tgz_download_dir = self.data_ingestion_config.tgz_download_dir
             
+            if os.path.exists(tgz_download_dir):
+                os.remove(tgz_download_dir)
             os.makedirs(tgz_download_dir,exist_ok=True)
 
-            housing_file_name = os.path.basename(download_url)
+            flighfare_file_name = os.path.basename(download_url)
 
-            tgz_file_path = os.path.join(tgz_download_dir, housing_file_name)
+            tgz_file_path = os.path.join(tgz_download_dir, flighfare_file_name)
 
             logging.info(f"Downloading file from :[{download_url}] into :[{tgz_file_path}]")
             urllib.request.urlretrieve(download_url, tgz_file_path)
@@ -74,8 +74,8 @@ class DataIngestion:
              
             # Suppose our training dataset has a specific spread of fare price and with specifc data stats then we'll ensure that those stast will also be present in test dataset this is called as Stratified Dataset Split 
 
-            logging.info(f"Reading csv file: [{flightfare_file_path}]")
-            flightfare_data_frame = pd.read_csv(flightfare_file_path)
+            logging.info(f"Reading excel file: [{flightfare_file_path}]")
+            flightfare_data_frame = pd.read_excel(flightfare_file_path,engine='openpyxl')
 
             flightfare_data_frame["flightfare_cat"] = pd.cut(
                 flightfare_data_frame["median_fareprice"],

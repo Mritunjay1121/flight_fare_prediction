@@ -66,8 +66,10 @@ class Configuartion():
                 ingested_train_dir=ingested_train_dir, 
                 ingested_test_dir=ingested_test_dir
             )
-        except:
-            pass
+            logging.info(f"Data Ingestion config :{data_ingestion_config}")
+            return data_ingestion_config
+        except Exception as e:
+            raise FlightfareException(e,sys) from e
     def get_data_validation_config(self) -> DataValidationConfig:
     
 
