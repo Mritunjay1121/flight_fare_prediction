@@ -3,7 +3,7 @@ training_pipeline_config:
   artifact_dir: artifact
 
 data_ingestion_config:
-  dataset_download_url: https://github.com/Mritunjay1121/Datasets/raw/main/Data_Train.tar.gz
+  dataset_download_url: https://github.com/Mritunjay1121/Datasets/raw/main/new_train.tar.gz
   raw_data_dir: raw_data
   tgz_download_dir: tgz_data
   ingested_dir: ingested_data
