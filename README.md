@@ -1,10 +1,9 @@
 # flight_fare_prediction
 
 Creating the environment
-
 ...
-conda create -p flight_fare_prediction python==3.7 -y
 
+conda create -p flight_fare_prediction python==3.7 -y
 ...
 
 Activating the environement
