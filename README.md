@@ -152,7 +152,7 @@ HEAD
 Data Drift: If data statistics gets changed we call as data drift
 ...
 
-...
+
 We will use evidently.ai to monitor it. We will generate graphs of train and test sets. And distribution of each column will be seen from both the datasets. If they are not alligned then there is data drift.If stats of both datasets are same then we say 0% datadrift
 
 
