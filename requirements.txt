@@ -6,4 +6,6 @@ pandas
 six
 PyYAML
 evidently
+seaborn
+dill
 -e .

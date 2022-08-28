@@ -351,3 +351,5 @@ MigrationBackup/
 
 flight_fare_prediction
 new_file
+notebook
+housing/artifact

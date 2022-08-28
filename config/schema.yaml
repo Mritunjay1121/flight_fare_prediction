@@ -1,37 +1,69 @@
 columns:
-  Total_Stops: float64
-  Price: float64
-  Journey_day: float64
-  Journey_month: float64
-  Dep_hour: float64
-  Dep_min: float64
-  Arrival_hour: float64
-  Arrival_min: float64
-  Duration_hours: float64
-  Duration_mins: float64
-  Airline_Air India: float64
-  Airline_GoAir: float64
-  Airline_IndiGo: float64
-  Airline_Jet Airways: float64
-  Airline_Jet Airways Business: float64
-  Airline_Multiple carriers: float64
-  Airline_Multiple carriers Premium economy: float64
-  Airline_SpiceJet: float64
-  Airline_Trujet: float64
-  Airline_Vistara: float64
-  Airline_Vistara: float64
-  Source_Chennai: float64
-  Source_Delhi: float64
-  Source_Kolkata: float64
-  Source_Mumbai: float64
-  Destination_Cochin: float64
-  Destination_Delhi: float64
-  Destination_Hyderabad: float64
-  Destination_Kolkata: float64
-  Destination_New Delhi: float64
-  
+  Airline: category
+  Source: category
+  Destination: category
+  Total_Stops: float
+  Price: float
+  Journey_day: float
+  Journey_month: float
+  Dep_hour: float
+  Dep_min: float
+  Arrival_hour: float
+  Arrival_min: float
+  Duration_hours: float
+  Duration_mins: float
+
+
+
 target_column: Price
 
+numerical_columns:
+  - Total_Stops
+  - Journey_day
+  - Journey_month
+  - Dep_hour
+  - Dep_min
+  - Arrival_hour
+  - Arrival_min
+  - Duration_hours
+  - Duration_mins
+
+categorical_columns:
+  - Airline
+  - Source
+  - Destination
 
 
 
+
+
+domain_value:
+  Airline:
+    - Jet Airways 
+    - IndiGo
+    - Air India 
+    - Multiple carriers
+    - SpiceJet
+    - Vistara
+    - Air Asia
+    - GoAir
+    - Multiple carriers Premium economy
+    - Jet Airways Business
+    - Vistara Premium economy
+    - Trujet
+  
+  Source:
+    - Delhi
+    - Kolkata
+    - Banglore
+    - Mumbai
+    - Chennai
+
+  Destination:
+    - Cochin
+    - Banglore
+    - Delhi
+    - New Delhi
+    - Hyderabad
+    - Kolkata
+  
