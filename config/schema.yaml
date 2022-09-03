@@ -3,7 +3,6 @@ columns:
   Source: category
   Destination: category
   Total_Stops: float
-  Price: float
   Journey_day: float
   Journey_month: float
   Dep_hour: float
@@ -12,6 +11,7 @@ columns:
   Arrival_min: float
   Duration_hours: float
   Duration_mins: float
+  Price: float
 
 
 
