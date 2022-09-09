@@ -27,7 +27,6 @@ class FeatureGenerator(BaseEstimator, TransformerMixin):
                  Duration_mins_idx=8,columns=None):
         """
         FeatureGenerator Initialization
-        
         """
         try:
             self.columns = columns
@@ -35,16 +34,12 @@ class FeatureGenerator(BaseEstimator, TransformerMixin):
                 Duration_hours_idx=self.columns.index(COLUMN_DURATION_HOURS)
                 Duration_mins_idx=self.columns.index(COLUMN_DURATION_MINUTES)
                 # Duration_mins
-                # total_rooms_ix = self.columns.index(COLUMN_TOTAL_ROOMS)
-                # population_ix = self.columns.index(COLUMN_POPULATION)
-                # households_ix = self.columns.index(COLUMN_HOUSEHOLDS)
-                # total_bedrooms_ix = self.columns.index(COLUMN_TOTAL_BEDROOM)
+              
 
             self.duration = duration
             self.Duration_hours_idx = Duration_hours_idx
             self.Duration_mins_idx = Duration_mins_idx
-            # self.households_ix = households_ix
-            # self.total_bedrooms_ix = total_bedrooms_ix
+      
         except Exception as e:
             raise FlightfareException(e,sys) from e
 
@@ -53,10 +48,7 @@ class FeatureGenerator(BaseEstimator, TransformerMixin):
 
     def transform(self, X, y=None):
         try:
-            # room_per_household = X[:, self.total_rooms_ix] / \
-            #                      X[:, self.households_ix]
-            # population_per_household = X[:, self.population_ix] / \
-            #                            X[:, self.households_ix]
+        
             if self.duration:
                 duration = X[:, self.Duration_hours_idx] + (X[:, self.Duration_mins_idx]/60)
                                    
@@ -89,29 +81,6 @@ class DataTransformation:
         except Exception as e:
             raise FlightfareException(e,sys) from e
 
-
-# To transform the datatypes as specified in the schema.yaml
-    # @staticmethod
-    # def load_data(file_path:str,schema_file_path:str) -> pd.DataFrame:
-    #     try:
-    #         dataset_schema=read_yaml_file(schema_file_path)
-    #         schema=dataset_schema[DATASET_SCHEMA_COLUMNS_KEY]
-    #         dataframe=pd.read_csv(file_path)
-    #         error_message=""
-
-    #         for column in dataframe:
-    #             if column in list(schema.keys()):
-    #                 dataframe[column].astype(schema[column])
-    #             else:
-    #                 error_message=f"{error_message} \nColumn: [{column}] is not in the schema. "
-    #         if len(error_message)>0:
-    #             raise Exception(error_message)
-    #         return dataframe
-
-
-
-    #     except Exception as e:
-    #         raise FlightfareException(e,sys) from e
 
     def get_data_transformer_object(self)->ColumnTransformer:
 
