@@ -177,6 +177,3 @@ Then get Process id of the proces
 
 
 taskkill /PID <PID> /F
-=======
-
->>>>>>> 58e9f5467330954ff96f4af1edf22b7e7f550458
