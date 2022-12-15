@@ -177,4 +177,3 @@ Then get Process id of the proces
 taskkill /PID <PID> /F
 
 
-Deployed [Here](http://ec2-18-207-195-244.compute-1.amazonaws.com:8080/)
