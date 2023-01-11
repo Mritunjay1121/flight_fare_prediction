@@ -66,13 +66,14 @@ git remote -v
 
 To setup CI/CD Pipeline in heroku we need 3 informations
 
-1. Heroku Email :   
-2. Heroku API Key :
-3. Heroku App Name: 
+1. HEROKU_EMAIL :   
+2. HEROKU_API_KEY :
+3. HEROKU_APP_NAME: 
 
 
 Create a Dockerfile inside main directory and write the code there for the configuration of virtual machine
 
+Also create .dockerignore to ignore environment,.git and .gitignore
 
 BUILD DOCKER IMAGE
 
@@ -80,7 +81,7 @@ BUILD DOCKER IMAGE
 docker build -t <image_name>:<tagname> .
 ```
 
-Note : Image name should for docker must be in lowercase
+Note : Image name for docker should must be in lowercase
 
 
 To list dockerimages
@@ -106,11 +107,29 @@ To stop docker container
 ```
 docker stop <container id>
 ```
+Now , set the changes to github.
 
-Now , set the changes to github
+Create a folder named .github.Inside it create "workflows" folder and inside workflows create main.yaml.This main.yaml will trigger the deployment whenever we'll push codes to "main" branch. 
 
-Create housing.
-Create setup.py and configure it for requirements.txt file 
+Push the files.
+
+Paste the code of heroku into this main.yaml file .
+Then go to the git hub repository -> Settings->Secrets->Actions. Here add 3 repository secrets. 
+
+1.HEROKU_API_KEY
+2.HEROKU_APP_NAME
+3.HEROKU_EMAIL
+
+After that go to Actions then rerun all jobs in the job that got failed.
+
+Thus we have formed a CI/CD pipeline.
+
+Open the app from Heroku app link. It will be deployed.
+
+Every time you will send the code to github it will be continuously send to heroku and will be simultaneously deployed.
+
+Create housing folder.
+Create setup.py file and configure it for requirements.txt file and our package
 
 Run this setup.py
 Using 
@@ -123,7 +142,7 @@ python setup.py install
 "e ." is used to install housing folder
 
 
-Make all folders inside housing
+Make all folders inside housing and each folder create __init__.py file
 
 And fill logging and exception folders first
 
@@ -135,6 +154,7 @@ We are using jupyter notebook to check the code that is to be written finally in
 ```
 pip install ipykernel
 ```
+
 
 Filling the entity folder to define entities
 
