@@ -186,7 +186,7 @@
               Flight Fare Price
             </div>
             <div class="card-body">
-        {% if context['flight_data'] is not none %}
+        {% if context['flightfareData_data'] is not none %}
         <table class="table table-striped">
             <caption>Flight Fare Prediction </caption>
             <tr>
@@ -194,7 +194,7 @@
                 <th>Feature Value</th>
 
             </tr>
-            {% for column,value in context['flight_data'].items() %}
+            {% for column,value in context['flightfareData_data'].items() %}
 
 
 
