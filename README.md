@@ -194,5 +194,3 @@ Then get Process id of the proces
 ```
 taskkill /PID <PID> /F
 ```
-
-Deployed 
